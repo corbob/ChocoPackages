@@ -1,24 +1,22 @@
 $ErrorActionPreference = 'Stop'
 
-$chocoPackage = 'komorebi'
+$chocoPackage = 'gitbutler'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
-$GitHubUser = "LGUG2Z"
-$GitHubRepo = "komorebi"
-$AssetPattern = "x86_64.msi"
-$assetExtension = "msi"
+$GitHubUser = "gitbutlerapp"
+$GitHubRepo = "gitbutler"
 
 $Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 
-$latestVersion = [version]($Latest.tag_name -replace 'v', '')
+$latestVersion = [version]($Latest.tag_name -replace 'release/', '')
 
 if ($null -eq $Current) {
     $Current = [pscustomobject]@{Version = '0.0.0' }
 }
 if ([version]($Current.Version) -lt $latestVersion) {
     $toolsDir = Join-Path $PSScriptRoot "packages\$chocoPackage"
-    $latestAsset = $latest.assets | Where-Object name -match $AssetPattern
-    [System.Net.WebClient]::new().DownloadFile($latestAsset.browser_download_url, "$toolsDir\tools\$chocoPackage.$assetExtension")
+    $latestAsset = [System.Net.HttpWebRequest]::Create('https://app.gitbutler.com/downloads/release/windows/x86_64/msi').GetResponse().ResponseUri.AbsoluteUri
+    [System.Net.WebClient]::new().DownloadFile($latestAsset, "$toolsDir\tools\$chocoPackage.$assetExtension")
     $nuspec = Get-ChildItem $toolsDir -Recurse -Filter '*.nuspec' | Select-Object -ExpandProperty FullName
     $install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyinstall.ps1' | Select-Object -ExpandProperty FullName
     $checksums = Get-FileHash "$toolsDir\tools\$chocoPackage.$assetExtension" -Algorithm SHA256
@@ -29,8 +27,13 @@ if ([version]($Current.Version) -lt $latestVersion) {
             file        = $nuspec
         },
         @{
+            toReplace   = '[[RELEASE_NOTES]]'
+            replaceWith = $latest.body
+            file        = $nuspec
+        },
+        @{
             toReplace   = '[[URL]]'
-            replaceWith = $LatestAsset.browser_download_url
+            replaceWith = $latestAsset
             file        = $install
         },
         @{

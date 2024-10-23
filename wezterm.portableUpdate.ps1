@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'wezterm.portable'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 

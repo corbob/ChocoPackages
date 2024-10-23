@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'whkd'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "LGUG2Z"

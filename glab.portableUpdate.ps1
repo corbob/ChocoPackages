@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'glab.portable'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $32bitMatch = '386'

@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'wezterm.install'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 

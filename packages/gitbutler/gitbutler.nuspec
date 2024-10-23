@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>gitbutler</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/gitbutler</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>GitButler</title>
+    <authors>GitButler</authors>
+    <projectUrl>https://gitbutler.com</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/gitbutler.png</iconUrl>
+    <licenseUrl>https://github.com/gitbutlerapp/gitbutler/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/gitbutlerapp/gitbutler</projectSourceUrl>
+    <releaseNotes><![CDATA[
+      [[RELEASE_NOTES]]
+      ]]></releaseNotes>
+    <tags>gitbutler versioncontrol</tags>
+    <summary>Git branch management tool, built from the ground up for modern workflows</summary>
+    <description><![CDATA[
+<div align="center">
+	<h1 align="center"><b>GitButler</b></h1>
+	<p align="center">
+		Git branch management tool, built from the ground up for modern workflows
+    <br />
+    <a href="https://gitbutler.com"><strong>gitbutler.com »</strong></a>
+</div>
+
+<br/>
+
+![gitbutler_client](https://github.com/gitbutlerapp/gitbutler/assets/16262535/0d180bfd-7a3c-4a66-a923-30534c5a8197)
+
+GitButler is a git client that lets you work on multiple branches at the same time.
+It allows you to quickly organize file changes into separate branches while still having them applied to your working directory.
+You can then push branches individually to your remote, or directly create pull requests.
+
+In a nutshell, it's a more flexible version of `git add -p` and `git rebase -i`, allowing you to efficiently multitask across branches.
+
+## How Does It Work?
+
+GitButler keeps track of uncommitted changes in a layer on top of Git. Changes to files or parts of files can be grouped into what we call virtual branches. Whenever you are happy with the contents of a virtual branch, you can push it to a remote. GitButler makes sure that the state of other virtual branches is kept separate.
+
+## How Do GB's Virtual Branches Differ From Git Branches?
+
+The branches that we know and love in Git are separate universes, and switching between them is a full context switch. GitButler allows you to work with multiple branches in parallel in the same working directory. This effectively means having the content of multiple branches available at the same time.
+
+GitButler is aware of changes before they are committed. This allows it to keep a record of which virtual branch each individual diff belongs to. Effectively, this means that you can separate out individual branches with their content at any time to push them to a remote or to unapply them from your working directory.
+
+And finally, while in Git it is preferable that you create your desired branch ahead of time, using GitButler you can move changes between virtual branches at any point during development.
+
+## Why GitButler?
+
+We love Git. Our own [@schacon](https://github.com/schacon) has even published the [Pro Git](https://git-scm.com/book/en/v2) book. At the same time, Git's user interface hasn't been fundamentally changed for 15 years. While it was written for Linux kernel devs sending patches to each other over mailing lists, most developers today have different workflows and needs.
+
+Instead of trying to fit the semantics of the Git CLI into a graphical interface, we are starting with the developer workflow and mapping it back to Git.
+
+## Tech
+
+GitButler is a [Tauri](https://tauri.app/)-based application. Its UI is written in [Svelte](https://svelte.dev/) using [TypeScript](https://www.typescriptlang.org) and its backend is written in [Rust](https://www.rust-lang.org/).
+
+## Main Features
+
+- **Virtual Branches**
+  - Organize work on multiple branches simultaneously, rather than constantly switching branches
+  - Automatically create new branches when needed
+- **Easy Commit Management**
+  - Undo, Amend and Squash commits by dragging and dropping
+- **Undo Timeline**
+  - Logs all operations and changes and allows you to easily undo or revert any operation
+- **GitHub Integration**
+  - Authenticate to GitHub to open Pull Requests, list branches and statuses and more
+- **Easy SSH Key Management**
+  - GitButler can generate an SSH key to upload to GitHub automatically
+- **AI Tooling**
+  - Automatically write commit messages based on your work in progress
+  - Automatically create descriptive branch names
+- **Commit Signing**
+  - Easy commit signing with GPG or SSH
+
+## Documentation
+
+You can find our end user documentation at: https://docs.gitbutler.com
+      ]]></description>
+  </metadata>
+  <files>
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
+  </files>
+</package>

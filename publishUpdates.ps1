@@ -9,7 +9,7 @@ choco find --source updatedPackages -r | ConvertFrom-Csv -Delimiter '|' -Header 
         Write-Host "$($_.Name) is already published to Community Repository, it's likely not yet approved."
     }
 }
-$failures = $exitCodes | ? Exit -ne 0
+$failures = $exits | ? Exit -ne 0
 if ($null -ne $failures) {
     Write-Error "$($failures.Count) failures pushing:
 $failures"

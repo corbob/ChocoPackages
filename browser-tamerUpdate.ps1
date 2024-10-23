@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'browser-tamer'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "aloneguid"

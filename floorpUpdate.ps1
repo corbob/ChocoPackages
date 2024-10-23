@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'floorp'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 

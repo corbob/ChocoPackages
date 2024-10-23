@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $chocoPackage = 'liftoff'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 
