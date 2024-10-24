@@ -18,15 +18,10 @@
     <tags>gitbutler versioncontrol</tags>
     <summary>Git branch management tool, built from the ground up for modern workflows</summary>
     <description><![CDATA[
-<div align="center">
-	<h1 align="center"><b>GitButler</b></h1>
-	<p align="center">
-		Git branch management tool, built from the ground up for modern workflows
-    <br />
-    <a href="https://gitbutler.com"><strong>gitbutler.com »</strong></a>
-</div>
+![gitbutler_icon](https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/gitbutler.png)
+# GitButler
 
-<br/>
+Git branch management tool, built from the ground up for modern workflows
 
 ![gitbutler_client](https://github.com/gitbutlerapp/gitbutler/assets/16262535/0d180bfd-7a3c-4a66-a923-30534c5a8197)
 

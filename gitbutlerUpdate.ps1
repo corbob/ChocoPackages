@@ -4,6 +4,7 @@ $chocoPackage = 'gitbutler'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "gitbutlerapp"
 $GitHubRepo = "gitbutler"
+$assetExtension = "msi"
 
 $Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
