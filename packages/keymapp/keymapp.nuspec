@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>keymapp</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/keymapp/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>Keymapp(Install)</title>
+    <authors>ZSA Technology Labs</authors>
+    <projectUrl>https://zsa.io/flash</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/keymapp.png</iconUrl>
+    <copyright>2025 ZSA</copyright>
+    <!-- <licenseUrl>https://github.com/wez/wezterm/blob/main/LICENSE.md</licenseUrl> -->
+    <tags>zsa keyboard utility</tags>
+    <summary></summary>
+    <description>
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <dependencies>
+      <dependency id='webview2-runtime' />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
