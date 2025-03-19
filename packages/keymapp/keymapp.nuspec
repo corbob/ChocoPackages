@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keymapp</id>
-    <version>[[VERSION]]</version>
+    <version>1.3.4</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/keymapp/</packageSourceUrl>
     <owners>corbob</owners>
     <title>Keymapp(Install)</title>
@@ -11,20 +11,14 @@
     <projectUrl>https://zsa.io/flash</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/keymapp.png</iconUrl>
     <copyright>2025 ZSA</copyright>
-    <!-- <licenseUrl>https://github.com/wez/wezterm/blob/main/LICENSE.md</licenseUrl> -->
     <tags>zsa keyboard utility</tags>
-    <summary></summary>
-    <description>
-    </description>
-    <releaseNotes>
-    </releaseNotes>
+    <summary>Use Keymapp to flash your board, then view your [ZSA] keyboard's layout.</summary>
+    <description>Use Keymapp to flash your board, then view your [ZSA] keyboard's layout.</description>
     <dependencies>
-      <dependency id='webview2-runtime' />
+      <dependency id='webview2-runtime' version='[134.0,)' />
     </dependencies>
   </metadata>
   <files>
-    <!-- this section controls what actually gets packaged into the Chocolatey package -->
     <file src="tools\**" target="tools" />
-    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
   </files>
 </package>
