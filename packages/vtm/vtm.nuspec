@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>vtm</id>
+    <version>0.9.99.70</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/vtm</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>vtm</title>
+    <authors>directvt</authors>
+    <projectUrl>https://github.com/directvt/vtm</projectUrl>
+    <copyright>2025 directvt</copyright>
+    <licenseUrl>https://github.com/directvt/vtm/blob/master/LICENSE</licenseUrl>
+    <projectSourceUrl>https://github.com/directvt/vtm</projectSourceUrl>
+    <tags>vtm terminal multiplexer utility</tags>
+    <summary>a text-based application where the entire user interface is represented by a mosaic of text cells forming a TUI matrix.</summary>
+    <description><![CDATA[
+# vtm
+
+It is a text-based application where the entire user interface is represented by a mosaic of text cells forming a TUI matrix. The resulting TUI matrix is just rendered either into its own GUI window or into a compatible text console.
+
+It can wrap any console application and be nested indefinitely, forming a text-based desktop environment.
+
+<a href="https://www.youtube.com/watch?v=kofkoxGjFWQ">
+  <img width="400" alt="Demo on YouTube" src="https://user-images.githubusercontent.com/11535558/146906370-c9705579-1bbb-4e9e-8977-47312f551cc8.gif">
+</a>
+
+# Supported platforms
+
+- Windows
+  - Windows 8.1 and later
+- [*nix](https://en.wikipedia.org/wiki/Unix-like)
+  - Linux
+  - macOS
+  - FreeBSD
+  - NetBSD
+  - OpenBSD
+  - [`...`](https://en.wikipedia.org/wiki/POSIX#POSIX-oriented_operating_systems)
+
+[Tested Terminals](https://github.com/directvt/vtm/discussions/72)
+
+<sup>Currently, rendering into a native GUI window is only available on the Windows platform; on *nix platforms, a terminal emulator is required.</sup>
+
+# Documentation
+
+- [Architecture](doc/architecture.md)
+- [Building from source](doc/build.md)
+- [Command-line options](doc/command-line-options.md)
+- [User interface](doc/user-interface.md)
+- [Settings](doc/settings.md)
+- [Unicode Character Geometry Modifiers](doc/character_geometry.md)
+    ]]>
+    </description>
+    <releaseNotes>https://github.com/directvt/vtm/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
