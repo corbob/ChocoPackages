@@ -9,7 +9,6 @@
     <title>Keymapp(Install)</title>
     <authors>ZSA Technology Labs</authors>
     <projectUrl>https://zsa.io/flash</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/keymapp.png</iconUrl>
     <copyright>2025 ZSA</copyright>
     <tags>zsa keyboard utility</tags>
     <summary>Use Keymapp to flash your board, then view your [ZSA] keyboard's layout.</summary>
