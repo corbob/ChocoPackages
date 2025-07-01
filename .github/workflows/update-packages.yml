@@ -5,7 +5,7 @@ on:
     - cron: 15 23 * * *
 jobs:
   package:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - name: Make updatedPackages directory
