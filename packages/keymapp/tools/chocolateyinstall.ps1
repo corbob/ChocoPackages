@@ -1,7 +1,7 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $fileLocation = 'https://oryx.nyc3.cdn.digitaloceanspaces.com/keymapp/keymapp-latest.exe'
-$downloaded = Get-ChocolateyWebFile -PackageName $env:ChocolateyPackageName -FileFullPath "$toolsDir/keymapp.exe" -Url $fileLocation -checksum '7EBC3492233B9812E55A4969033F36F3259401DC0B71E696E77D7A3DD9AE87F8' -checksumType 'sha256'
+$downloaded = Get-ChocolateyWebFile -PackageName $env:ChocolateyPackageName -FileFullPath "$toolsDir/keymapp.exe" -Url $fileLocation -checksum 'FFE4BBCF2618FB19454F5C829066C5B2746FCE9F572386E863D70B8FD77D7576' -checksumType 'sha256'
 
 [System.IO.File]::WriteAllBytes("$toolsDir/zsa.cer", (Get-AuthenticodeSignature $downloaded).SignerCertificate.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert))
 

@@ -62,6 +62,10 @@ jobs:
         shell: pwsh
         run: ./gitbutlerUpdate.ps1
         if: always()
+      - name: Check for keymapp updates
+        shell: pwsh
+        run: ./keymappUpdate.ps1
+        if: always()
       - name: Publish to Chocolatey
         shell: pwsh
         run: ./publishUpdates.ps1 -ApiKey ${{ secrets.PUSH_REPO_KEY }}
