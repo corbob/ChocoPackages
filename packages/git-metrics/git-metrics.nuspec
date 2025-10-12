@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>[[ID]]</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/[[ID]]</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>[[TITLE]]</title>
+    <authors>[[AUTHOR]]</authors>
+    <projectUrl>[[PROJECT_URL]]</projectUrl>
+    <licenseUrl>[[LICENSE_URL]]</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>[[PROJECT_SOURCE_URL]]</projectSourceUrl>
+    <releaseNotes><![CDATA[[[RELEASE_NOTES]]]]></releaseNotes>
+    <tags>[[TAGS]]</tags>
+    <summary>[[SUMMARY]]</summary>
+    <description><![CDATA[[[DESCRIPTION]]]]></description>
+  </metadata>
+  <files>
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
+  </files>
+</package>
