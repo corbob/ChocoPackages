@@ -66,6 +66,10 @@ jobs:
         shell: pwsh
         run: ./keymappUpdate.ps1
         if: always()
+      - name: Check for kanata updates
+        shell: pwsh
+        run: ./kanataUpdate.ps1
+        if: always()
       - name: Check for git-metrics updates
         shell: pwsh
         run: ./git-metricsUpdate.ps1

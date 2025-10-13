@@ -1,0 +1,13 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The file 'LICENSE.txt' has been obtained from <https://github.com/jtroo/kanata/raw/refs/tags/v[[VERSION]]/LICENSE>
+
+The embedded software have been downloaded from the GitHub release, and can be verified by doing the following:
+
+1. Download the files from <https://github.com/jtroo/kanata/releases/tag/v[[VERSION]]>
+2. Get the checksum using one of the following methods:
+  - Using powershell function 'Get-FileHash'
+  - Use chocolatey utility 'checksum.exe'
+3. The checksums should match the following:
