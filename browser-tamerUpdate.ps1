@@ -4,11 +4,11 @@ $chocoPackage = 'browser-tamer'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "aloneguid"
 $GitHubRepo = "bt"
-$AssetPattern = "msi$"
-$assetExtension = "msi"
+$AssetPattern = "zip$"
+$assetExtension = "zip"
 
 $Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
-$Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
+$Current = choco search $chocoPackage --exact -r --include-headers --source $chocoSource | ConvertFrom-Csv -Delimiter '|'
 
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')
 
