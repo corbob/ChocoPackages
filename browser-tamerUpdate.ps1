@@ -4,7 +4,7 @@ $chocoPackage = 'browser-tamer'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "aloneguid"
 $GitHubRepo = "bt"
-$AssetPattern = "zip$"
+$AssetPattern = "bt\.zip$"
 $assetExtension = "zip"
 
 $Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
