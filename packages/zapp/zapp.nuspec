@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>zapp</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/zapp/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>zapp</title>
+    <authors>ZSA Technology Labs</authors>
+    <projectUrl>https://github.com/zsa/zapp</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/zapp.png</iconUrl>
+    <copyright>2026 ZSA</copyright>
+    <licenseUrl>https://github.com/zsa/zapp/blob/main/LICENSE.md</licenseUrl>
+    <projectSourceUrl>https://github.com/zsa/zapp</projectSourceUrl>
+    <tags>zsa keyboard utility</tags>
+    <summary>A cross-platform CLI tool for flashing [ZSA](https://www.zsa.io) keyboards.</summary>
+    <description>
+# ⚡ Zapp
+
+A cross-platform CLI tool for flashing [ZSA](https://www.zsa.io) keyboards.
+
+## Supported keyboards
+
+- Voyager
+- Moonlander MK1 (rev A and rev B)
+- Ergodox EZ STM32/Teensy (including Original, Shine, and Glow variants)
+- Halfmoon
+- Planck EZ (including Standard and Glow variants)
+
+    </description>
+    <releaseNotes>https://github.com/zsa/zapp/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
