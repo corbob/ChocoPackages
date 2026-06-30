@@ -6,7 +6,7 @@
     <version>[[VERSION]]</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/wezterm/</packageSourceUrl>
     <owners>corbob</owners>
-    <title>Wez's Terminal (Install)</title>
+    <title>Wez's Terminal</title>
     <authors>Wez Furlong</authors>
     <projectUrl>https://github.com/wez/wezterm</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/wezterm.png</iconUrl>
