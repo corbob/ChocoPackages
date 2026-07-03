@@ -14,6 +14,10 @@ jobs:
       - name: Install chocolatey-community-validation.extension
         shell: pwsh
         run: choco install chocolatey-community-validation.extension --confirm --trace --debug
+      - name: Check for devproxy updates
+        shell: pwsh
+        run: ./devproxyUpdate.ps1
+        if: always()
       - name: Check for zapp updates
         shell: pwsh
         run: ./zappUpdate.ps1
