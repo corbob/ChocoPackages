@@ -18,6 +18,7 @@ if ([version]($Current.Version) -lt $latestVersion) {
     $webClient = [System.Net.WebClient]::new()
     $toolsDir = Join-Path $PSScriptRoot "packages\$chocoPackage"
     $asset = $latest.assets | Where-Object name -Match $AssetPattern
+    if ($asset.Count -ne 1) { throw "Expected 1 asset matching '$AssetPattern', but found $($asset.Count)" }
 
     $nuspec = Get-ChildItem $toolsDir -Recurse -Filter '*.nuspec' | Select-Object -ExpandProperty FullName
     $install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyinstall.ps1' | Select-Object -ExpandProperty FullName

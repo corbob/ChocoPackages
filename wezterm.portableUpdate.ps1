@@ -13,6 +13,7 @@ if ($null -eq $Current) {
 
 if ([version]($Current.Version) -lt $latestVersion) {
     $latestAsset = $latest.assets | Where-Object name -like 'WezTerm-windows*.zip'
+    if ($latestAsset.Count -ne 1) { throw "Expected 1 asset matching 'WezTerm-windows*.zip', but found $($latestAsset.Count)" }
     $toolsDir = Join-Path $PSScriptRoot "packages\$chocoPackage"
     [System.Net.WebClient]::new().DownloadFile($latestAsset.browser_download_url, "$toolsDir\tools\$chocoPackage.zip")
     $checksums = Get-FileHash "$toolsDir\tools\$chocoPackage.zip" -Algorithm SHA256
