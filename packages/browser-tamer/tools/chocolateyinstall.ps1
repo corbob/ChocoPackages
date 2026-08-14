@@ -13,4 +13,7 @@ $packageArgs = @{
   validExitCodes = @(0, 3010, 1641)
 }
 
+# Remove existing bin file as installer has changed to an msi...
+Uninstall-BinFile -name bt -path $env:ChocolateyInstall/bin/bt.exe
+
 Install-ChocolateyPackage @packageArgs
