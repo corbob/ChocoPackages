@@ -4,8 +4,8 @@ $chocoPackage = 'browser-tamer'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 $GitHubUser = "aloneguid"
 $GitHubRepo = "bt"
-$AssetPattern = "bt\.zip$"
-$assetExtension = "zip"
+$AssetPattern = "BrowserTamer-.*-win64\.msi$"
+$assetExtension = "msi"
 
 $Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 $Current = choco search $chocoPackage --exact -r --include-headers --source $chocoSource | ConvertFrom-Csv -Delimiter '|'

@@ -3,21 +3,14 @@ $ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url = "[[URL]]"
 
-$unzipLocation = $toolsDir
-
-$previousInstallKey = Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\| Get-ItemProperty | Where-Object displayname -like 'browser tamer'
-
-if ($previousInstallKey) {
-  Write-Host "Found previous install."
-  $unzipLocation = $previousInstallKey.InstallLocation
-}
-
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  unzipLocation  = $unzipLocation
+  fileType       = 'msi'
   url            = $url
   checksum       = '[[CHECKSUM]]'
   checksumType   = 'sha256'
+  silentArgs     = '/quiet /norestart'
+  validExitCodes = @(0, 3010, 1641)
 }
 
-Install-ChocolateyZipPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
