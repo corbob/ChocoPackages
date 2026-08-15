@@ -13,6 +13,7 @@ if ($null -eq $Current) {
 
 if ([version]($Current.Version) -lt $latestVersion) {
     $latestAsset64 = $latest.assets | Where-Object name -match 'floorp-windows-x86_64\.installer\.exe'
+    if ($latestAsset64.Count -ne 1) { throw "Expected 1 asset matching 'floorp-windows-x86_64\.installer\.exe', but found $($latestAsset64.Count)" }
     $toolsDir = Join-Path $PSScriptRoot "packages/$chocoPackage"
     [System.Net.WebClient]::new().DownloadFile($latestAsset64.browser_download_url, "$toolsDir/$chocoPackage-win64.exe")
     $checksums64 = Get-FileHash "$toolsDir/$chocoPackage-win64.exe" -Algorithm SHA256
