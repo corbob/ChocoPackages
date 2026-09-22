@@ -1,4 +1,5 @@
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'GitHubApi.ps1')
 
 $chocoPackage = 'browser-tamer'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
@@ -7,7 +8,7 @@ $GitHubRepo = "bt"
 $AssetPattern = "BrowserTamer-.*-win64\.msi$"
 $assetExtension = "msi"
 
-$Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
+$Latest = Invoke-GitHubApi "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 $Current = choco search $chocoPackage --exact -r --include-headers --source $chocoSource | ConvertFrom-Csv -Delimiter '|'
 
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')

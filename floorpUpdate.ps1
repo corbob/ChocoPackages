@@ -1,9 +1,10 @@
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'GitHubApi.ps1')
 
 $chocoPackage = 'floorp'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 
-$Latest = Invoke-RestMethod 'https://api.github.com/repos/floorp-projects/floorp/releases/latest'
+$Latest = Invoke-GitHubApi 'https://api.github.com/repos/floorp-projects/floorp/releases/latest'
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')
 

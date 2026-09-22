@@ -1,4 +1,5 @@
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'GitHubApi.ps1')
 
 $chocoPackage = 'git-metrics'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
@@ -7,7 +8,7 @@ $GitHubRepo = "git-metrics"
 $AssetPattern = "windows-amd64\.zip$"
 $assetExtension = "zip"
 
-$Latest = Invoke-RestMethod "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
+$Latest = Invoke-GitHubApi "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')
