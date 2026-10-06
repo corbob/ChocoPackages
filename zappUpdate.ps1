@@ -8,7 +8,7 @@ $GitHubRepo = "zapp"
 $AssetPattern = "zapp-windows-x86_64.zip"
 
 $Latest = Invoke-GitHubApi "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
-# $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
+$Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')
 
@@ -16,7 +16,6 @@ if ($null -eq $Current) {
     $Current = [pscustomobject]@{Version = '0.0.0' }
 }
 if ([version]($Current.Version) -lt $latestVersion) {
-    $webClient = [System.Net.WebClient]::new()
     $toolsDir = Join-Path $PSScriptRoot "packages\$chocoPackage"
     $asset = $latest.assets | Where-Object name -Match $AssetPattern
 
