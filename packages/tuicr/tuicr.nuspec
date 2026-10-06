@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>tuicr</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/tuicr/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>tuicr</title>
+    <authors>tuicr contributors</authors>
+    <projectUrl>https://tuicr.dev/</projectUrl>
+    <copyright>2025 tuicr contributors</copyright>
+    <licenseUrl>https://github.com/agavra/tuicr/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/agavra/tuicr</projectSourceUrl>
+    <docsUrl>https://github.com/agavra/tuicr/blob/main/docs/CLI.md</docsUrl>
+    <bugTrackerUrl>https://github.com/agavra/tuicr/issues</bugTrackerUrl>
+    <tags>tuicr code-review tui git jj mercurial cli</tags>
+    <summary>A code review TUI with vim keybindings.</summary>
+    <description>
+# tuicr
+
+A code review TUI with vim keybindings. Export to GitHub, GitLab, Gitea, Bitbucket, Azure DevOps, Gerrit, or clipboard.
+
+## What it does
+
+- GitHub-style continuous diff in the terminal. Scroll through every changed file in one stream.
+- PR-style comments at the line, range, file, and review level.
+- Review tracking at file or hunk granularity, persisted across sessions.
+- Push a real review to GitHub, GitLab, Gitea, Bitbucket, Azure DevOps, or Gerrit, copy structured markdown to your clipboard, or pipe to stdout.
+- Works with git, jj, and mercurial. Reviews uncommitted changes, commit ranges, or any GitHub PR, GitLab MR, Gitea PR, Bitbucket PR, Azure DevOps PR, or Gerrit change.
+
+    </description>
+    <releaseNotes>https://github.com/agavra/tuicr/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

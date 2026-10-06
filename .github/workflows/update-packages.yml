@@ -24,6 +24,10 @@ jobs:
         shell: pwsh
         run: ./zappUpdate.ps1
         if: always()
+      - name: Check for tuicr updates
+        shell: pwsh
+        run: ./tuicrUpdate.ps1
+        if: always()
       - name: Check for glab updates
         shell: pwsh
         run: ./glabUpdate.ps1
