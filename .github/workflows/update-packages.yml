@@ -28,6 +28,10 @@ jobs:
         shell: pwsh
         run: ./tuicrUpdate.ps1
         if: always()
+      - name: Check for sandbox-mcp updates
+        shell: pwsh
+        run: ./sandbox-mcpUpdate.ps1
+        if: always()
       - name: Check for glab updates
         shell: pwsh
         run: ./glabUpdate.ps1

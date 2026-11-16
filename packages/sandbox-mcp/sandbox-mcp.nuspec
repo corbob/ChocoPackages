@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sandbox-mcp</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/sandbox-mcp/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>sandbox-mcp</title>
+    <authors>Scott Hanselman</authors>
+    <projectUrl>https://github.com/shanselman/sandbox-mcp</projectUrl>
+    <copyright>2026 Scott Hanselman</copyright>
+    <licenseUrl>https://github.com/shanselman/sandbox-mcp/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/shanselman/sandbox-mcp</projectSourceUrl>
+    <docsUrl>https://github.com/shanselman/sandbox-mcp/blob/main/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/shanselman/sandbox-mcp/issues</bugTrackerUrl>
+    <tags>sandbox-mcp windows-sandbox sandbox mcp testing installer cli</tags>
+    <summary>Fresh, throwaway Windows machines for testing your apps: a CLI and MCP server that automate Windows Sandbox.</summary>
+    <description>
+# sandbox-mcp
+
+Fresh, throwaway Windows machines for testing your apps. sandbox-mcp automates Windows Sandbox from the `sbx` command line or as an MCP server.
+
+## Features
+
+- Run an app on a clean Windows Sandbox and get a report with screenshots and crash events.
+- Test an installer and uninstaller, and see every file, registry key, service and scheduled task left behind.
+- Drive the app's UI with UI Automation.
+- Inspect an app's dependencies on the host without running it.
+
+## Requirements
+
+- Windows 11 24H2 (build 26100) or newer, x64, Pro, Enterprise or Education edition.
+- The Windows Sandbox optional feature must be enabled. This package does not enable it. Run `sbx doctor` to check.
+
+## Notes
+
+- The package adds `sbx` to the PATH. Run `sbx mcp` to start the MCP server.
+- sandbox-mcp bundles its own Node.js runtime, which is not added to the PATH.
+    </description>
+    <releaseNotes>https://github.com/shanselman/sandbox-mcp/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
