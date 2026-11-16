@@ -71,7 +71,7 @@ jobs:
       - name: Check for browser-tamer updates
         shell: pwsh
         run: ./browser-tamerUpdate.ps1
-        if: always()
+        if: false
       - name: Check for gitbutler updates
         shell: pwsh
         run: ./gitbutlerUpdate.ps1
