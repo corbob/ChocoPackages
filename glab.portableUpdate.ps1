@@ -15,6 +15,7 @@ if ($null -eq $Current) {
 
 if ([version]($Current.Version) -lt $latestVersion) {
     $latestAssets = $Latest.assets.links | Where-Object name -Match 'zip'
+    if ($latestAssets.Count -ne 2) { throw "Expected 2 assets matching 'zip', but found $($latestAssets.Count)" }
     $toolsDir = "$PSScriptRoot/packages/$chocoPackage"
     $tempDir = "$PSScriptRoot/temp/$chocoPackage"
     mkdir $tempDir
